@@ -15,33 +15,24 @@ A X2 Eventos precisava de um sistema interno para substituir o processo manual (
 
 ## ✅ Critérios de aceite cobertos
 
-| ID  | Critério                          | Cobertura         |
-|-----|-----------------------------------|-------------------|
-| AC1 | Formulário de inscrição           | ✅ Happy path + negativos |
-| AC2 | Validação dos campos              | ✅ E-mail, nome, obrigatórios |
-| AC3 | Limite de vagas                   | ✅ Lotado + boundary test |
-| AC4 | Confirmação de inscrição          | ✅ Mensagem + reset do form |
-| AC5 | Atualização da lista em tempo real| ✅ Verificação imediata |
-| AC6 | E-mail de confirmação             | ⚠️ Dependente de mock de SMTP |
-| AC7 | Remoção de participante           | ✅ Remoção + contagem de vagas |
-
----
-
-## 🗂️ Estrutura do repositório
-
-```
-qa-x2-eventos/
-├── docs/
-│   └── relatorio-qa.pdf        - Análise completa (checklist, perguntas, melhorias UX)
-├── features/
-│   └── inscricao.feature       - Cenários Gherkin em português
-├── tests/
-│   └── inscricao.spec.ts       - Testes automatizados (Playwright)
-├── pages/
-│   └── EventPage.ts            - Page Object Model
-├── playwright.config.ts
-└── package.json
-```
+| ID | Critério | Cenário | Tipo | Prioridade | 
+|---|---|---|---|---|---|
+| AC1 | Cadastro | Inscrição com sucesso | Happy Path | Alta |
+| AC1 | Cadastro | Cadastro sem telefone | Funcional | Média | 
+| AC2 | Validação | Campos obrigatórios vazios | Negativo | Alta | 
+| AC2 | Validação | E-mail inválido | Negativo | Alta | 
+| AC2 | Validação | Nome com caracteres inválidos | Negativo | Média | 
+| AC3 | Limite de vagas | Evento lotado | Boundary | Alta | 
+| AC3 | Limite de vagas | Última vaga disponível | Boundary | Alta | 
+| AC3 | Concorrência | Duas inscrições simultâneas | Concorrência | Alta | 
+| AC4 | Feedback | Mensagem de sucesso | Funcional | Média | 
+| AC5 | Lista de inscritos | Participante aparece na lista | Funcional | Alta | 
+| AC5 | Lista de inscritos | Atualização da contagem de vagas | Funcional | Alta |
+| AC7 | Remoção | Remover participante | Funcional | Alta |
+| AC7 | Remoção | Restaurar vagas após remoção | Funcional | Média |
+| SEG1 | Segurança | Impedir scripts no campo nome (XSS) | Segurança | Alta | 
+| NEG1 | Integridade | Impedir inscrição duplicada | Negativo | Alta | 
+| NEG2 | Integridade | Evitar múltiplos cliques no botão Inscrever | Negativo | Média |
 
 ---
 
@@ -112,17 +103,23 @@ npx playwright show-report
 
 ## ❓ Perguntas levantadas ao time
 
-- O que acontece se o envio do e-mail de confirmação falhar?
-- É possível o mesmo e-mail se inscrever duas vezes no mesmo evento?
-- O limite de vagas é fixo (50) ou configurável por evento?
-- Quem tem permissão para remover um inscrito?
-- Há validação de formato/DDD no campo Telefone?
-
+1. **O sistema deve permitir participantes com o mesmo nome?**
+2. **E-mails duplicados devem ser bloqueados?**
+3. **Existe limite de caracteres para nome e telefone?**
+4. **O que ocorre se o envio do e-mail de confirmação falhar?**
+5. **O sistema deve atualizar vagas em tempo real para múltiplos organizadores?**
+6. **O botão “Inscrever” deve possuir proteção contra múltiplos cliques?**
+7. **Existe necessidade de auditoria/log de remoção de participantes?**
+8. **Como o sistema deve tratar concorrência entre inscrições simultâneas?**
 ---
 
 ## 🛠️ Stack utilizada
 
-- **Playwright** - automação de testes E2E
-- **TypeScript** - tipagem e manutenibilidade
-- **Page Object Model** - organização e reúso de código
-- **Gherkin** - documentação de cenários em linguagem natural
+| Tecnologia | Objetivo |
+|---|---|
+| Playwright | Automação E2E |
+| TypeScript | Linguagem da automação |
+| Page Object Model | Organização e manutenção dos testes |
+| GitHub Actions | Execução contínua dos testes |
+| Faker | Geração de massa dinâmica |
+
