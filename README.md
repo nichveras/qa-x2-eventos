@@ -15,25 +15,24 @@ A X2 Eventos precisava de um sistema interno para substituir o processo manual (
 
 ## ✅ Critérios de aceite cobertos
 
-| ID | Critério | Cenário | Tipo | Prioridade | 
-|---|---|---|---|---|---|
-| AC1 | Cadastro | Inscrição com sucesso | Happy Path | Alta |
-| AC1 | Cadastro | Cadastro sem telefone | Funcional | Média | 
-| AC2 | Validação | Campos obrigatórios vazios | Negativo | Alta | 
-| AC2 | Validação | E-mail inválido | Negativo | Alta | 
-| AC2 | Validação | Nome com caracteres inválidos | Negativo | Média | 
-| AC3 | Limite de vagas | Evento lotado | Boundary | Alta | 
-| AC3 | Limite de vagas | Última vaga disponível | Boundary | Alta | 
-| AC3 | Concorrência | Duas inscrições simultâneas | Concorrência | Alta | 
-| AC4 | Feedback | Mensagem de sucesso | Funcional | Média | 
-| AC5 | Lista de inscritos | Participante aparece na lista | Funcional | Alta | 
+| ID | Critério | Cenário | Tipo | Prioridade |
+|---|---|---|---|---|
+| AC1 | Cadastro | Inscrição com sucesso | Caminho feliz | Alta |
+| AC1 | Cadastro | Cadastro sem telefone | Funcional | Média |
+| AC2 | Validação | Campos obrigatórios vazios | Negativo | Alta |
+| AC2 | Validação | E-mail inválido | Negativo | Alta |
+| AC2 | Validação | Nome com caracteres inválidos | Negativo | Média |
+| AC3 | Limite de vagas | Evento lotado | Limite | Alta |
+| AC3 | Limite de vagas | Última vaga disponível | Limite | Alta |
+| AC3 | Concorrência | Duas inscrições simultâneas | Concorrência | Alta |
+| AC4 | Feedback | Mensagem de sucesso | Funcional | Média |
+| AC5 | Lista de inscritos | Participante aparece na lista | Funcional | Alta |
 | AC5 | Lista de inscritos | Atualização da contagem de vagas | Funcional | Alta |
 | AC7 | Remoção | Remover participante | Funcional | Alta |
 | AC7 | Remoção | Restaurar vagas após remoção | Funcional | Média |
-| SEG1 | Segurança | Impedir scripts no campo nome (XSS) | Segurança | Alta | 
-| NEG1 | Integridade | Impedir inscrição duplicada | Negativo | Alta | 
+| SEG1 | Segurança | Impedir scripts no campo nome (XSS) | Segurança | Alta |
+| NEG1 | Integridade | Impedir inscrição duplicada | Negativo | Alta |
 | NEG2 | Integridade | Evitar múltiplos cliques no botão Inscrever | Negativo | Média |
-
 ---
 
 ## 🚀 Como executar os testes
@@ -113,7 +112,7 @@ npx playwright show-report
 8. **Como o sistema deve tratar concorrência entre inscrições simultâneas?**
 ---
 
-## 🛠️ Stack utilizada
+## 🛠️ Tecnologia utilizada
 
 | Tecnologia | Objetivo |
 |---|---|
