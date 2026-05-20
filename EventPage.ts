@@ -41,7 +41,6 @@ export class EventPage {
     this.vagasBadge       = page.getByTestId('vagas-badge');
   }
 
-  /** Navega para a página do evento pelo ID ou slug */
   async goto(eventId: string) {
     await this.page.goto(`/eventos/${eventId}`);
     await this.page.waitForLoadState('networkidle');
@@ -63,11 +62,11 @@ export class EventPage {
     await row.getByRole('button', { name: 'Remover' }).click();
   }
 
-  /** Retorna o número de vagas disponíveis (ex: "47/50" → 47) */
-  async getVagasDisponiveis(): Promise<number> {
-    const text = await this.vagasBadge.innerText();
-    return parseInt(text.split('/')[0].trim(), 10);
-  }
+  /** Retorna o número de vagas disponíveis */
+  async getVagasDisponiveis() {
+    const badge = await this.vagasBadge.innerText();
+    return Number(badge.split('/')[0]);
+}
 
   /** Retorna o total de vagas do evento (ex: "47/50" → 50) */
   async getTotalVagas(): Promise<number> {
