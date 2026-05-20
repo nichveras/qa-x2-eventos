@@ -1,4 +1,4 @@
-# Relatório de Análise QA — X2 Eventos
+# Relatorio de Analise QA - X2 Eventos
 
 ## Objetivo
 
