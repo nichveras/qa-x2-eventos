@@ -2,12 +2,12 @@
 
 ## Objetivo
 
-Avaliar a funcionalidade de gerenciamento de inscrições da plataforma **X2 Eventos**, garantindo:
+Avaliar a funcionalidade de gerenciamento de inscricoes da plataforma **X2 Eventos**, garantindo:
 - controle correto de vagas;
-- integridade das inscrições;
-- validações de formulário;
-- experiência do usuário;
-- prevenção de erros operacionais;
+- integridade das inscricoes;
+- validacoes de formulario;
+- experiencia do usuario;
+- prevencao de erros operacionais;
 - confiabilidade do sistema em cenários críticos.
 
 ---
