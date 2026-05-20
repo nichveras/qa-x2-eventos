@@ -1,4 +1,4 @@
-# Cenários de Teste — Gerenciamento de Inscrições para Eventos
+# Cenários de Teste - Gerenciamento de Inscrições para Eventos
 
 ## Cenário 01: Inscrição de participantes no evento.
 
