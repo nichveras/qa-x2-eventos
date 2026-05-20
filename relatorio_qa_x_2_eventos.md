@@ -30,7 +30,7 @@ A análise cobre os seguintes fluxos:
 
 # Estratégia de Testes
 
-A estratégia foi baseada em:
+A estrategia foi baseada em:
 - testes funcionais;
 - testes negativos;
 - testes de limite (boundary);
