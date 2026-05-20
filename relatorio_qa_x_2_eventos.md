@@ -62,8 +62,8 @@ A estrategia foi baseada em:
 | AC2 | Validação | Campos obrigatórios vazios | Negativo | Alta |
 | AC2 | Validação | E-mail inválido | Negativo | Alta |
 | AC2 | Validação | Nome com caracteres inválidos | Negativo | Média |
-| AC3 | Limite de vagas | Evento lotado | Limite | Alta |
-| AC3 | Limite de vagas | Última vaga disponível | Limite | Alta |
+| AC3 | Limite de vagas | Evento lotado | Boundary | Alta |
+| AC3 | Limite de vagas | Última vaga disponível | Boundary | Alta |
 | AC3 | Concorrência | Duas inscrições simultâneas | Concorrência | Alta |
 | AC4 | Feedback | Mensagem de sucesso | Funcional | Média |
 | AC5 | Lista de inscritos | Participante aparece na lista | Funcional | Alta |
@@ -73,17 +73,19 @@ A estrategia foi baseada em:
 | SEG1 | Segurança | Impedir scripts no campo nome (XSS) | Segurança | Alta |
 | NEG1 | Integridade | Impedir inscrição duplicada | Negativo | Alta |
 | NEG2 | Integridade | Evitar múltiplos cliques no botão Inscrever | Negativo | Média |
+
 ---
 
 # Cenários Críticos Avaliados
 
 ## 1. Controle de Overbooking
 
-- o sistema pode bloquear inscrições quando o limite é atingido;
+- o sistema deve bloquear inscrições quando o limite é atingido;
 - a contagem de vagas não fica negativa;
 - apenas uma inscrição é concluída em cenários concorrentes.
 
 ### Risco mitigado
+
 Evitar inconsistência operacional e excesso de participantes.
 
 ---
@@ -97,11 +99,12 @@ Evitar inconsistência operacional e excesso de participantes.
 - espaços em branco.
 
 ### Risco mitigado
+
 Evitar dados inconsistentes e problemas de comunicação.
 
 ---
 
-# Testes Negativos 
+# Testes Negativos
 
 Os seguintes cenários negativos foram considerados:
 
@@ -143,8 +146,9 @@ Aplicar máscara automática:
 ```
 
 ### Benefícios
-- melhora experiência do usuário;
-- reduz erros de digitação.
+
+- melhora da experiência do usuário;
+- redução de erros de digitação.
 
 ---
 
@@ -153,8 +157,9 @@ Aplicar máscara automática:
 Adicionar estado de loading no botão “Inscrever”.
 
 ### Benefícios
+
 - evita múltiplos cliques;
-- melhora percepção de resposta do sistema.
+- melhora a percepção de resposta do sistema.
 
 ---
 
@@ -163,6 +168,7 @@ Adicionar estado de loading no botão “Inscrever”.
 Exibir mensagens de erro abaixo dos campos.
 
 ### Benefícios
+
 - feedback imediato;
 - redução de retrabalho do usuário.
 
@@ -173,6 +179,7 @@ Exibir mensagens de erro abaixo dos campos.
 Atualizar contador de vagas imediatamente após inscrição/remoção.
 
 ### Benefícios
+
 - transparência operacional;
 - melhor controle do evento.
 
@@ -201,7 +208,7 @@ Atualizar contador de vagas imediatamente após inscrição/remoção.
 
 # Conclusão
 
-A funcionalidade pode apresentar requisitos importantes relacionados à:
+A funcionalidade apresenta requisitos importantes relacionados à:
 - integridade operacional;
 - concorrência;
 - experiência do usuário;
@@ -222,4 +229,3 @@ Os testes automatizados foram estruturados utilizando:
 - cenários parametrizados.
 
 O objetivo foi garantir uma cobertura robusta, com foco em qualidade, estabilidade e confiabilidade da funcionalidade.
-
