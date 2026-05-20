@@ -1,4 +1,4 @@
-# QA Challenge — Gerenciamento de Inscrições para Eventos
+# QA Challenge - Gerenciamento de Inscrições para Eventos
 
 > Análise de qualidade completa para o sistema de gerenciamento de participantes da **X2 Eventos**, incluindo checklist de testes, cenários Gherkin e automação com Playwright.
 
@@ -32,13 +32,13 @@ A X2 Eventos precisava de um sistema interno para substituir o processo manual (
 ```
 qa-x2-eventos/
 ├── docs/
-│   └── relatorio-qa.pdf        # Análise completa (checklist, perguntas, melhorias UX)
+│   └── relatorio-qa.pdf        - Análise completa (checklist, perguntas, melhorias UX)
 ├── features/
-│   └── inscricao.feature       # Cenários Gherkin em português
+│   └── inscricao.feature       - Cenários Gherkin em português
 ├── tests/
-│   └── inscricao.spec.ts       # Testes automatizados (Playwright)
+│   └── inscricao.spec.ts       - Testes automatizados (Playwright)
 ├── pages/
-│   └── EventPage.ts            # Page Object Model
+│   └── EventPage.ts            - Page Object Model
 ├── playwright.config.ts
 └── package.json
 ```
@@ -102,11 +102,11 @@ npx playwright show-report
 
 ## 💡 Melhorias UX/UI propostas
 
-1. **Confirmação antes de remover** — evitar exclusão acidental de inscrito
-2. **Feedback do e-mail enviado** — exibir status do envio ao organizador
-3. **Busca e ordenação na lista** — facilitar gestão de eventos grandes
-4. **Máscara no campo Telefone** — formato (XX) XXXXX-XXXX com teclado numérico
-5. **Prevenção de duplicatas** — validar e-mail único por evento
+1. **Confirmação antes de remover** - evitar exclusão acidental de inscrito
+2. **Feedback do e-mail enviado** - exibir status do envio ao organizador
+3. **Busca e ordenação na lista** - facilitar gestão de eventos grandes
+4. **Máscara no campo Telefone** - formato (XX) XXXXX-XXXX com teclado numérico
+5. **Prevenção de duplicatas** - validar e-mail único por evento
 
 ---
 
@@ -122,7 +122,7 @@ npx playwright show-report
 
 ## 🛠️ Stack utilizada
 
-- **Playwright** — automação de testes E2E
-- **TypeScript** — tipagem e manutenibilidade
-- **Page Object Model** — organização e reúso de código
-- **Gherkin** — documentação de cenários em linguagem natural
+- **Playwright** - automação de testes E2E
+- **TypeScript** - tipagem e manutenibilidade
+- **Page Object Model** - organização e reúso de código
+- **Gherkin** - documentação de cenários em linguagem natural
