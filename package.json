@@ -1,0 +1,15 @@
+{
+  "name": "qa-x2-eventos",
+  "version": "1.0.0",
+  "description": "QA Challenge — Gerenciamento de Inscrições para Eventos X2 Eventos",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright test --reporter=html && playwright show-report",
+    "test:headed": "playwright test --headed"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "typescript": "^5.4.0"
+  }
+}
